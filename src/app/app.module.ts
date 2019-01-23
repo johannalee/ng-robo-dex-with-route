@@ -7,12 +7,18 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './store/reducers';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { HomeComponent } from './home/home.component';
+import { SearchBoxComponent } from './components/search-box.component';
+import { CardListComponent } from './components/card-list.component';
+import { CardComponent } from './components/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchPageComponent,
-    HomeComponent
+    HomeComponent,
+    SearchBoxComponent,
+    CardListComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

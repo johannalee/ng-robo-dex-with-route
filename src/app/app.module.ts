@@ -11,6 +11,7 @@ import { SearchBoxComponent } from './components/search-box.component';
 import { CardListComponent } from './components/card-list.component';
 import { CardComponent } from './components/card.component';
 import { AppStore } from './store/app.store';
+import { SearchStore } from './store/search/search.store';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AppStore } from './store/app.store';
   ],
   providers: [
     AppStore,
+    SearchStore
   ],
   bootstrap: [AppComponent]
 })

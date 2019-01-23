@@ -1,22 +1,18 @@
 import { Component, OnDestroy } from '@angular/core';
-import { Robot } from '../store/robot.type';
+import { dummyData, Robot } from '../store/robot.type';
 import { SearchStore } from '../store/search/search.store';
 
 @Component({
   selector: 'app-card-list',
   template: `
-    <div *ngFor="let robot of filterRobots()">
+    <span *ngFor="let robot of filterRobots()">
       <app-card [robot]="robot" ></app-card>
-    </div>
+    </span>
   `,
 })
 
 export class CardListComponent implements OnDestroy {
-  public robots: Robot[] = [
-    {id: 1, name:'John', email: 'john@staplescanada.ca'},
-    {id: 2, name:'Sherry', email: 'sherry@staplescanada.ca'},
-    {id: 3, name:'Fred', email: 'fred@staplescanada.ca'},
-  ];
+  public robots: Robot[] = dummyData;
 
   private subscription: any;
   private searchTerm = '';

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
       <h1>RoboDex</h1>
       <app-search-box></app-search-box>
     </div>
-    <div class="ba vh-75 pre">
+    <div class="ba vh-75 overflow-y-scroll">
       <app-card-list></app-card-list>
     </div>
   `,

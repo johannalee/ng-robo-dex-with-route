@@ -9,16 +9,16 @@ import { SearchStoreService } from '../store/search/search.store.service';
         class="pa2"
         type="search"
         placeholder="Search Me"
-        (keyup)="searchRobo($event)"
+        (keyup)="searchRobot($event)"
       />
     </div>
   `,
 })
 export class SearchBoxComponent {
 
-  constructor(private searchStore: SearchStoreService) { }
+  constructor(private searchStoreService: SearchStoreService) { }
 
-  searchRobo(event: any) {
-    this.searchStore.updateSearchTerm(event.target.value);
+  searchRobot(event: any) {
+    this.searchStoreService.updateSearchTerm(event.target.value);
   }
 }

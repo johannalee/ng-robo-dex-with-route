@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SearchStore } from '../store/search/search.store';
 
 @Component({
   selector: 'app-search-box',
@@ -15,9 +16,9 @@ import { Component } from '@angular/core';
 })
 export class SearchBoxComponent {
 
-  constructor() { }
+  constructor(private searchStore: SearchStore) { }
 
   searchRobo(event: any) {
-    console.log(event.target.value);
+    this.searchStore.updateSearchTerm(event.target.value);
   }
 }

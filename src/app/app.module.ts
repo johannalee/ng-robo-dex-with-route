@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { SearchBoxComponent } from './components/search-box.component';
 import { CardListComponent } from './components/card-list.component';
 import { CardComponent } from './components/card.component';
+import { AppStore } from './store/app.store';
+import { SearchStore } from './store/search/search.store';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,10 @@ import { CardComponent } from './components/card.component';
     AppRoutingModule,
     StoreModule.forRoot(reducers, { metaReducers })
   ],
-  providers: [],
+  providers: [
+    AppStore,
+    SearchStore
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  public title = 'Robo Dex'
+  public title = 'RoboDex';
   constructor() { }
 }

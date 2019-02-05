@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RobotService } from '../services/robot.service';
 
 @Component({
   selector: 'app-search-page',
@@ -14,6 +15,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./search-page.component.css']
 })
 export class SearchPageComponent {
-
-  constructor() { }
+  constructor(private robotService: RobotService) {
+    robotService.fetchRobots();
+  }
 }

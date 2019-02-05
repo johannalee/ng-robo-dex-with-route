@@ -1,33 +1,29 @@
 import { Component, OnDestroy } from '@angular/core';
-import { dummyData, Robot } from '../store/robot.type';
-import { SearchStore } from '../store/search/search.store';
+import { Robot } from '../store/robot/robot.type';
+import { RobotService } from '../services/robot.service';
 
 @Component({
   selector: 'app-card-list',
   template: `
-    <span *ngFor="let robot of filterRobots()">
-      <app-card [robot]="robot" ></app-card>
+    <span *ngFor="let robot of robots">
+      <app-card [robot]="robot"></app-card>
     </span>
   `,
 })
 
 export class CardListComponent implements OnDestroy {
-  public robots: Robot[] = dummyData;
-
+  public robots: Robot[];
   private subscription: any;
-  private searchTerm = '';
 
-  constructor(private searchStore: SearchStore) {
-    this.subscription = searchStore.getSearchTerm().subscribe(state => {
-      this.searchTerm = state.toLowerCase();
+  constructor(
+    private robotService: RobotService,
+  ) {
+    this.subscription = robotService.filterRobots().subscribe(state => {
+      this.robots = state;
     });
   }
 
   public ngOnDestroy() {
     this.subscription.unsubscribe();
-  }
-
-  public filterRobots(): Robot[] {
-    return this.robots.filter(robot => robot.name.toLowerCase().includes(this.searchTerm));
   }
 }

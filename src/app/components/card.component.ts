@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Robot } from '../store/robot.type';
+import { Robot } from '../store/robot/robot.type';
 
 @Component({
   selector: 'app-card',

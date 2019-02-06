@@ -34,4 +34,8 @@ export class RobotService {
       map(([robots, searchTerm]) => robots.filter(robot => robot.name.toLowerCase().includes(searchTerm)))
     );
   }
+
+  public deleteRobot(robotId: number) {
+    this.robotStoreService.deleteRobot(robotId);
+  }
 }

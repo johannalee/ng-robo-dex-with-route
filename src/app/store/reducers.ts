@@ -23,5 +23,4 @@ export const reducers: ActionReducerMap<AppState> = {
   robot: robotReducer,
 };
 
-
 export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [logger] : [];

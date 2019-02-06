@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Robot } from './robot.type';
-import { FetchRobotSuccess } from './robot.actions';
+import { FetchRobotSuccess, DeleteRobot } from './robot.actions';
 import { createFeatureSelector, createSelector, select, Store} from '@ngrx/store';
 import { RobotState } from './robot.reducer';
 import { AppState } from '../reducers';
@@ -21,6 +21,10 @@ export class RobotStoreService {
   // action dispatchers
   public fetchRobotSuccess(payload: Robot[]) {
     this.store.dispatch(new FetchRobotSuccess(payload));
+  }
+
+  public deleteRobot(payload: number) {
+    this.store.dispatch(new DeleteRobot(payload));
   }
 
   // selectors

@@ -14,8 +14,12 @@ export function robotReducer(
   action: robotActions.RobotActions,
 ): RobotState {
   switch (action.type) {
-    case robotActions.RobotActionTypes.Success:
+    case robotActions.RobotActionTypes.FetchRobotsSuccess:
       return { robots: action.payload };
+
+    case robotActions.RobotActionTypes.DeleteRobot:
+      return { robots: state.robots.filter(robot => robot.id !== action.payload) };
+
     default:
       return state;
   }
